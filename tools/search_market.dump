@@ -1,0 +1,177 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 10.10 (Ubuntu 10.10-0ubuntu0.18.04.1)
+-- Dumped by pg_dump version 10.10 (Ubuntu 10.10-0ubuntu0.18.04.1)
+
+-- Started on 2019-10-11 03:30:20 CEST
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- TOC entry 215 (class 1259 OID 16549)
+-- Name: search_market; Type: TABLE; Schema: public; Owner: bcl
+--
+
+CREATE TABLE public.search_market (
+    id integer NOT NULL,
+    name character varying(40) NOT NULL,
+    slug character varying(20) NOT NULL,
+    product_id character varying(20) NOT NULL,
+    plan character varying(30) NOT NULL
+);
+
+
+ALTER TABLE public.search_market OWNER TO bcl;
+
+--
+-- TOC entry 214 (class 1259 OID 16547)
+-- Name: search_market_id_seq; Type: SEQUENCE; Schema: public; Owner: bcl
+--
+
+CREATE SEQUENCE public.search_market_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.search_market_id_seq OWNER TO bcl;
+
+--
+-- TOC entry 2979 (class 0 OID 0)
+-- Dependencies: 214
+-- Name: search_market_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bcl
+--
+
+ALTER SEQUENCE public.search_market_id_seq OWNED BY public.search_market.id;
+
+
+--
+-- TOC entry 2848 (class 2604 OID 16552)
+-- Name: search_market id; Type: DEFAULT; Schema: public; Owner: bcl
+--
+
+ALTER TABLE ONLY public.search_market ALTER COLUMN id SET DEFAULT nextval('public.search_market_id_seq'::regclass);
+
+
+--
+-- TOC entry 2973 (class 0 OID 16549)
+-- Dependencies: 215
+-- Data for Name: search_market; Type: TABLE DATA; Schema: public; Owner: bcl
+--
+
+COPY public.search_market (id, name, slug, product_id, plan) FROM stdin;
+71	Yukon	YT	prod_Fwa2VJvHU2RZKi	plan_Fwa21OcKESVJF0
+72	Wales	WAL	prod_Fwa2QS0h01KVzW	plan_Fwa2K0aAouenP4
+73	Vermont	VT	prod_Fwa1XwbyyHqsWO	plan_Fwa1t0e2aPqF7Q
+74	South Dakota	SD	prod_Fwa0H3UDLKHSWL	plan_Fwa0TdBRPonokz
+75	Scotland	SCT	prod_Fwa0WrFOSFwrCN	plan_Fwa0b40i2QTyC8
+76	Saskatchewan	SK	prod_FwZzjHs5O7VMrj	plan_FwZzUSLUHq2V8Q
+77	Nunavut	NU	prod_FwZzmyxZs4cATs	plan_FwZzY8oNWB2G8N
+78	Nova Scotia	NS	prod_FwZyKmUpWsauwF	plan_FwZy3rqWyugH8n
+79	Northern Ireland	NIR	prod_FwZxwxinZONNBG	plan_FwZy6EUMKagX3U
+80	New Brunswick	NB	prod_FwZw5x3Iho0scl	plan_FwZxBRHxmFuZKy
+81	Mississippi	MS	prod_FwZwthjbyjfYFi	plan_FwZwnFetnrIk9Z
+82	Manitoba	MB	prod_FwZvqPatL6n75u	plan_FwZvRPKUY53VUr
+83	Wisconsin	WI	prod_FwZkGbF1qsj3J7	plan_FwZkad5aY9VmPN
+84	West Virginia	WV	prod_FwZjO6FLvQ0KJV	plan_FwZkKcCVUNzs1R
+85	Wyoming	WY	prod_FwZjDJTp4dLqZW	plan_FwZjFEutCyXm3G
+86	Washington	WA	prod_FwZiqtKgb1astR	plan_FwZixTm71TyzpP
+87	Virginia	VA	prod_FwZiWSVMusx6nZ	plan_FwZiQrOZP7cwUs
+88	Utah	UT	prod_FwZhbuwQVwbCi3	plan_FwZhvuSc5UdddG
+89	UK	UK	prod_FwZgyi4Rk9QMUi	plan_FwZgTgzroAJole
+90	Tennessee	TN	prod_FwZfi1rDsHWdBG	plan_FwZfuFNHrmqHtW
+91	Texas	TX	prod_FwZew2Vk2Gt8wT	plan_FwZfSamk8PF4nF
+92	South Carolina	SC	prod_FwZeaGUeggoS8N	plan_FwZezWjccqgueL
+93	Rhode Island	RI	prod_FwZdfzVI8fvGsA	plan_FwZd0elR2JpDuz
+94	Quebec	QC	prod_FwZdYAGk2wpshA	plan_FwZdWChrH5QNqw
+95	Puerto Rico	PR	prod_FwZcCocdGWmTP8	plan_FwZdctX3OsAs2J
+96	Pennsylvania	PA	prod_FwZcgYR0rSserQ	plan_FwZcw6gsCTDKqO
+97	Oregon	OR	prod_FwZbjZsDamSL7j	plan_FwZckgRrhETADx
+98	Ontario	ON	prod_FwZbHqgjuGgKII	plan_FwZbfb77hNMIqB
+99	Ohio	OH	prod_FwZadVe1lTh9Eo	plan_FwZauSqieTcR6W
+100	Oklahoma	OK	prod_FwZaFleqnvsXcY	plan_FwZaQYtVhGk1ey
+101	Nevada	NV	prod_FwZZCL2je3lOrs	plan_FwZZBu5lvrcDVu
+102	New York	NY	prod_FwZZu9aiWssy3L	plan_FwZZ7GAVbxl6JF
+103	New Mexico	NM	prod_FwZYY1OtHnuswH	plan_FwZY36QJYFrRTw
+104	Northwest Territories	NT	prod_FwZY0gcFlirAYg	plan_FwZYLIIOg9iiRq
+105	Newfoundland	NL	prod_FwZXE9gAYlnudg	plan_FwZX7yh9ptsFWY
+106	New Hampshire	NH	prod_FwZXQsI1CHVBKn	plan_FwZX8WnAZliCyw
+70	NONE	NONE	NONE	NONE
+107	New Jersey	NJ	prod_FwZWoaoQ8NDJmt	plan_FwZWdepj4Vxgq5
+108	North Dakota	ND	prod_FwZVgFmVQoBAoz	plan_FwZWAeNq96CqN6
+109	Nebraska	NE	prod_FwZV9plyOG0PbK	plan_FwZVQ8CZT91Vic
+110	Montana	MT	prod_FwZUX1mOQEwK3g	plan_FwZUcHDa4Vvrn0
+111	North Carolina	NC	prod_FwZTMbqm4sEXN8	plan_FwZUHLtgeLXUZM
+112	Missouri	MO	prod_FwZTWsk2tjiyQF	plan_FwZT0KrAgizOLE
+113	Minnesota	MN	prod_FwZStuaQ7BGRxQ	plan_FwZS6mmLfNUSCk
+114	Michigan	MI	prod_FwZR5YamZlyWOd	plan_FwZRhbD9nkv8oW
+115	Maine	ME	prod_FwZR3zWk1TcSsv	plan_FwZRHDMeKUSDGK
+116	Maryland	MD	prod_FwZQ5bIbs41Q7W	plan_FwZQbiyccWJ19R
+117	Louisiana	LA	prod_FwZPYSjXiyc4aQ	plan_FwZPExFr7aCeLD
+118	Massachusetts	MA	prod_FwZObZpfm0tDtR	plan_FwZOmQiQBRkINH
+119	Kentucky	KY	prod_FwZMYWy7OO4Lnf	plan_FwZNzzfJWUxpBk
+120	Kansas	KS	prod_FwZMnWEk4oRq8z	plan_FwZM243axandT9
+121	Indiana	IN	prod_FwZLPFvMYcJTFO	plan_FwZLMww6Bkf32e
+122	Illinois	IL	prod_FwZK9KvoC8XIzJ	plan_FwZLmwawelcqBF
+123	Idaho	ID	prod_FwZJ1t1WxX0TBw	plan_FwZKP1J7PAjRYw
+124	Iowa	IA	prod_FwZIEzLmJoI3oo	plan_FwZJyyBhvQB1Gb
+125	Hawaii	HI	prod_FwZHK1S4fgRsd0	plan_FwZHeIcoAURytT
+126	Georgia	GA	prod_FwZEmriZQsao6G	plan_FwZEI2HPPTEMwu
+127	Florida	FL	prod_FwZ3ry2SwaW3ii	plan_FwZ3gRn5Hmm0s1
+128	England	ENG	prod_FwZ1jrjA0Uk0lJ	plan_FwZ2xXxu4WW0CQ
+129	Delaware	DE	prod_FwZ1AFm5SL0iFd	plan_FwZ1KbvLTpJnr2
+130	District of Columbia	DC	prod_FwYzPRjRYZ4yTg	plan_FwZ0fMDo5H43Wb
+131	Connecticut	CT	prod_FwYxvGYa7NPQ9O	plan_FwYytNJbKG6OTK
+132	Colorado	CO	prod_FwYwoSH3pmrOr7	plan_FwYwq4C3joIL3a
+133	California	CA	prod_FwYtimqlivlB6Z	plan_FwYtiBuedvnvhJ
+134	British Columbia	NC	prod_FwYs1eg3ZU4orf	plan_FwYv9SGXAh275g
+135	Arizona	AZ	prod_FwYriLI2a1aysi	plan_FwYrzbqvCrRLXA
+136	Alabama	AL	prod_FwYpEL7UGM3a64	plan_FwYpwCvME8Qb3T
+137	Alaska	AK	prod_FwYozaxsWY2O8O	plan_FwYo2N4BMhvkHm
+138	Alberta	AB	prod_FwYmkqE8AcdcQc	plan_FwYv60d84aKtW1
+139	Full market access	ALL	prod_FrDedMcFumV9Er	plan_FwbRzn8SKBrwRa
+\.
+
+
+--
+-- TOC entry 2980 (class 0 OID 0)
+-- Dependencies: 214
+-- Name: search_market_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bcl
+--
+
+SELECT pg_catalog.setval('public.search_market_id_seq', 139, true);
+
+
+--
+-- TOC entry 2850 (class 2606 OID 16554)
+-- Name: search_market search_market_pkey; Type: CONSTRAINT; Schema: public; Owner: bcl
+--
+
+ALTER TABLE ONLY public.search_market
+    ADD CONSTRAINT search_market_pkey PRIMARY KEY (id);
+
+
+-- Completed on 2019-10-11 03:30:23 CEST
+
+--
+-- PostgreSQL database dump complete
+--
+
